@@ -1,0 +1,43 @@
+<html lang='en-US'>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Impede - Manage Cover Letters</title>
+        <link href='styles/manageCL.css' rel='stylesheet'>
+        <script src='scripts/jquery-3.4.0.min.js'></script>
+        <script src='scripts/manageCL.js'></script>
+    </head>
+    <body>
+        <!-- Main Container -->
+    <div class='container'>
+            <div class='head'>
+                <img class="centered" id="logo" src="icons/icon128.png">
+                <h2 class="centered">impede</h2>
+                <span>
+                    <h1>Manage Cover Letters</h1>
+                </span>
+                <span>
+                    <select class='selectbox' id='selectedCL' name='selectedCL' >
+                        <option selected disabled='disabled'>Choose A Cover Letter</option>
+                    </select>
+                    <button class='menuButton' id='saveButton'>Save...</button>
+                    <button class='menuButton' id='deleteButton'>Delete</button>
+                    <button class='menuButton confirm' id='confirmButton'>Sure?</button>
+                    <button class='menuButton' id='cancelButton'>Cancel</button>
+                    <button class='menuButton' id='newButton'>New...</button>
+                    <input  disabled='disabled' class='disabled' type="text" value="New Cover Letter Name" id="newCLName"></input>
+                </span>
+            </div>
+            <hr>
+            <div class='readout'>
+                <h3 id="instructions">**** Instructions ****<br/>To edit a saved cover letter, simply select it from the drop down list.<br/>To create a new cover letter, click "New" and follow the directions.<br/><br/></h3>
+                <p><b>[company]</b> = Auto-Fill the company name</p>
+                <p><b>[job]</b> = Auto-Fill the job title</p>
+                <textarea id='textEditor'></textarea>
+                <span>
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
