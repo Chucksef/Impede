@@ -1,0 +1,142 @@
+
+body.janus #resultsCol .row.result.vjs-highlight {
+    background-color: #efefef;
+    border-left-width: 4px !important;
+    border-bottom-width: 0px !important;
+    border-top-width: 0px !important;
+}
+
+body.janus #resultsCol .row, body.janus #resultsCol .related_searches, body.janus #resultsCol .dupetext, body.janus #footer {
+    border-top-width: 0px !important;
+    border-left-width: 4px !important;
+}
+
+div.ita-base-container,#popover-background.popover,.indeed-apply-popup-bg{
+    display:none !important;
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow {
+    min-height: 56px;
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow > *:not(.impedeMenu) {
+    width: calc(100% - 30px);
+}
+
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #FF5A1F; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 10; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    top: 50px; /* 30px from the bottom */
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein .5s, fadeout .5s 2.5s;
+}
+
+@keyframes fadein {
+    from {top:0; opacity: 0;}
+    to {top:50px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {top:50px; opacity: 1;}
+    to {top:0px; opacity: 0;}
+}
+
+#textarea-applicant {
+    background-color: pink;
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow > div.impedeMenu {
+    height: 26px;
+    width: 26px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu > div.impedeSub {
+    z-index: -1;
+    background-color: white;
+    height: 22px;
+    width: 22px;
+    border-radius: 16px;
+    padding: 0;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: flex;
+    flex-direction: column-reverse;
+    transition-timing-function: ease-in;
+    transition-duration: .15s;
+    transition-delay: .4s;
+    filter: drop-shadow(1px 3px 6px rgba(0,0,0,.25));
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu:hover > div.impedeSub,
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu > div.impedeSub:hover {
+    height: 3.1em;
+    transition-delay: .15s;
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu > #impedeButton {
+    width: 60%;
+    padding: 0;
+    margin: 20%;
+    transition-duration: .1s;
+    /* transition-timing-function: cubic-bezier(1,-1.33,.25,2); */
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu > #impedeButton:hover {
+    width: 76%;
+    margin: 12%;
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu > #impedeButton:active {
+    animation-name: squish;
+    animation-duration: .4s;
+    animation-iteration-count: 1; 
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu #heartButton {
+    width: 50%;
+    height: auto;
+    margin: 0 25% 7px;
+    padding: 0;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(1,-1.33,.25,2);
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu #heartButton:hover {
+    width: 70%;
+    margin: 0 15% 4px;
+}
+
+#resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu #heartButton:active {
+    animation-name: squish;
+    animation-duration: .4s;
+    animation-play-state: running;
+    animation-iteration-count: 1;  
+}
+
+@keyframes squish {
+    0%   {transform: scaleX(1)}
+    20%  {transform: scaleX(.6)}
+    30%  {transform: scaleX(.75)}
+    100% {transform: scaleX(1)}
+}

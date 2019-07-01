@@ -1,0 +1,106 @@
+/*Default Styles*/
+    body {
+        width:160px;
+        height:220px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    hr {
+        width: 100%;
+        border-top:1px solid #FF5A1F;
+        margin: 1px
+    }
+
+    p {
+        margin: 5px auto -5px auto;
+    }
+
+    button {
+        border: none;
+        transition-duration: 0.08s;
+        color: white;
+        background-color: #cccccc;
+    }
+
+    #impedeImage {
+        height: 72px;
+        margin-top: 10px;
+    }
+
+    #selectedCL {
+        min-width:108px;
+    }
+
+    .menuButton {
+        padding: 8px;
+        font-size: 16px;
+        width: 76px;
+        margin: 3px auto 0px auto;
+        border: 1px white;
+    }
+
+    #dataMenu {
+        width:100%;
+    }
+
+    .centerColumn {
+        margin: 0px auto 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+/*Heading & Paragraph Text Styles*/
+    h2 {
+        font-size: 24pt;
+        color: #3a64f3;
+        margin: -5px 0px 10px 0px;
+    }
+    h3 {
+        font-size: 13pt;
+        text-align: center;
+        color: black;
+        margin: 3px auto 8px auto;
+
+    }
+
+/*Button Styles*/
+    #backButton {
+        position: absolute;
+        border-radius: 10px;
+        height: 15px;
+        width: 15px;
+        padding: 0px;
+        left: 7px;
+        top: 179px;
+        font-size: 10pt;
+        background-color: #FF5A1F;
+    }
+    #backButton:hover {
+        background-color: #212a46
+    }
+    .menuButton:hover {
+        background-color: #3a64f3;
+    }
+    button:active {
+        transform: scale(.95,.95);
+        filter: invert;
+    }
+
+/*Coverletter menu Styles*/
+    #inputs {
+        width: 108px;
+        margin: 2px auto 20px;
+    }
+
+    #selectCL {
+        width: 108px;
+        margin: 0 auto;
+    }
+
+    .inputField {
+        width: 104px;
+        margin: 5px 0px 0px;
+        color: #bbb;
+    }

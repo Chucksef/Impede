@@ -1,0 +1,103 @@
+body{
+    background-color: rgb(239, 239, 239);
+}
+
+div.container {
+    background-color:white;
+    padding: 25px;
+    width: 650px;
+    height: 100%;
+    margin: 0 auto;
+    filter: drop-shadow(0px 10px 25px rgba(0,0,0,.15));
+}
+
+input {
+    padding: 2px;
+    background-color: white;
+    color: black;
+}
+
+select {
+    min-width:175px;
+}
+
+input.disabled {
+    border: none;
+    padding:4px;
+}
+
+h1, h2, h3, p {
+text-align: center;
+margin: 10px;
+}
+
+h2 {
+    font-size: 24pt;
+    text-align: center;
+    color: #3a64f3;
+    margin: 0px auto 0px;
+}
+
+#logo{
+    height: 75px;
+    width: auto;
+    margin: 0 auto -10;
+}
+
+.centered {
+    display:block;
+    margin: 0 auto 0;
+}
+
+span {
+    display: table;
+    margin: -5px auto;
+    align-content: center;
+}
+
+span > * {
+    margin: 5px;
+}
+
+hr {
+    width: 100%;
+    border-top:1px solid #FF5A1F;
+    margin: 15px 0px 10px -1px;
+}
+
+
+#textEditor {
+    min-height: 500px;
+    width: 100%;
+    resize: none;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 0 10px 0;
+}
+
+.disabled {
+    color:#bbb !important;
+    background-color:#eee !important;
+}
+
+.menuButton {
+    border: none;
+    transition-duration: 0.08s;
+    color: white;
+    background-color: #cccccc;
+    padding: 8px;
+    font-size: 13px;
+    width: 56px;
+    margin: 3px;
+}
+.menuButton:hover {
+    background-color: #3a64f3;
+}
+
+.menuButton.confirm {
+    background-color: red;
+}
+
+.menuButton.confirm:hover {
+    background-color: rgb(140,0,0);
+}
