@@ -50,11 +50,24 @@ chrome.runtime.onMessage.addListener(
 function updateBlockList(shouldBeBlocked){                                          //////Function to Update the blocked list goes here.....
     chrome.storage.sync.get('blockList', function(impede){                              //Access stored BlockList array thru Chrome Storage API
         var newList;                                                                    //Local variable for this function
-
+        
         if(impede.blockList){                                                           //Check if stored array exists yet
             newList = impede.blockList;                                                 //If so, store it in temporary variable
         } else {
             newList = [];                                                               //If not, use an empty array to start
+        }
+
+        for (i=0;i<newList.length;) {                                               //////Iterates over list...
+            if(newList[i] == "" || newList[i] == null){                                 //...Checks if an item is empty...
+                newList.splice(i,1);                                                    //...Gets rid of that entry...
+            }
+            else{
+                i++;                                                                    //...If not, it just continues to the next one
+            }
+        }
+
+        while(newList.length > 360){
+            newList.splice(0,1);
         }
 
         if(shouldBeBlocked===true && $.inArray(elemID, newList)==-1){                   //If the element should be on the list, but doesn't exist there yet...
@@ -68,6 +81,7 @@ function updateBlockList(shouldBeBlocked){                                      
 }
 
 function addTwirldown(elem){                                                        //////Function to Add Twirldown Elements GOES HERE......
+
     //Local variables
         var jobTitle = elem.children("div.title").children("a").attr("title");
         var companyName = elem.find("span.company").children("a").text();

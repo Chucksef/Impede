@@ -11,6 +11,11 @@ body.janus #resultsCol .row, body.janus #resultsCol .related_searches, body.janu
     border-left-width: 4px !important;
 }
 
+div.indeed-apply-popup{
+    position:fixed !important;
+    left: 15% !important;
+}
+
 div.ita-base-container,#popover-background.popover,.indeed-apply-popup-bg{
     display:none !important;
 }
