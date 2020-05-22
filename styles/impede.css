@@ -37,7 +37,7 @@ iFrame.vjs-container-iframe {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #FF5A1F; /* Black background color */
+    background-color: rgb(255, 136, 57); /* Black background color */
     color: #fff; /* White text color */
     text-align: center; /* Centered text */
     border-radius: 2px; /* Rounded borders */
@@ -113,8 +113,8 @@ iFrame.vjs-container-iframe {
 }
 
 #resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu > #impedeButton:hover {
-    width: 76%;
-    margin: 12%;
+    width: 100%;
+    margin: 0;
 }
 
 #resultsBody #pageContent #resultsCol .row.unifiedRow div.impedeMenu > #impedeButton:active {

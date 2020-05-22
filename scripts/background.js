@@ -1,8 +1,7 @@
 
 //GLOBAL VARIABLES GO HERE
 var elemID;                                                                             //Global storage for Current Element ID
-var iconURL = chrome.extension.getURL("icons/headIcon32.png");                                  //Creates an absolute URL for the script to use
-var heartURL = chrome.extension.getURL("icons/heartIcon32.png");
+var iconURL = chrome.extension.getURL("icons/icon32.png");                                  //Creates an absolute URL for the script to use
 
                                                                                     //////HIDE SEVERAL ANNOYING UI ELEMENTS BEFORE FUN STUFF
 $(".jobToJobRec_Hide").hide();                                                          //Hides all annoying, hidden, soon-to-be-unhidden divs
@@ -125,7 +124,7 @@ chrome.storage.sync.get('blockList', function(impede){                          
     $("div.jobsearch-SerpJobCard").each(function(i){                                    //Iterate over all the listings...
         $(this).css('border-right', '4px solid #ffffff');                               //Give everything a white border for alignment purposes...
         if($(this).find("span.iaLabel").length){                                        //If the listing contains the iaLabel span...
-            $(this).css('border-right', '4px solid #ff5a1f')                            //Add a helpful Color-Coded border...
+            $(this).css('border-right', '4px solid rgb(255, 136, 57)')                            //Add a helpful Color-Coded border...
         }
         if($(this).find("span.sponsoredGray").length){                                  //If we find a sponsor tag in the listing
             $(this).hide();                                                             //Hides that listing
@@ -153,10 +152,6 @@ $("div.jobsearch-SerpJobCard").on({
                     alt='Click Here to Add/Remove Indeed Job from Impede Database' \
                     id='impedeButton'> \
                 </img> \
-                <div class='impedeSub'> \
-                    <img src='"+heartURL+"' \
-                    id='heartButton'> \
-                </div> \
             </div> \
         ");
 

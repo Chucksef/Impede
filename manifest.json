@@ -6,11 +6,11 @@
     "short_name": "Impede",
     "icons": {
         "128": "icons/icon128.png",
-        "48": "icons/icon48.png",
-        "16": "icons/headIcon16.png"
+        "32": "icons/icon32.png",
+        "16": "icons/icon16.png"
     },
     "browser_action":{
-        "default_icon": "icons/headIcon16.png",
+        "default_icon": "icons/icon16.png",
         "default_popup": "popup.html"
     },
     "permissions": [
@@ -19,8 +19,7 @@
         "clipboardRead"
     ],
     "web_accessible_resources": [
-        "icons/headIcon32.png",
-        "icons/heartIcon32.png"
+        "icons/icon32.png"
     ],
     "content_scripts": [ 
         {

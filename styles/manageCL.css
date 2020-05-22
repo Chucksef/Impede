@@ -34,7 +34,7 @@ margin: 10px;
 h2 {
     font-size: 24pt;
     text-align: center;
-    color: #3a64f3;
+    color: #124ecc;
     margin: 0px auto 0px;
 }
 
@@ -61,7 +61,7 @@ span > * {
 
 hr {
     width: 100%;
-    border-top:1px solid #FF5A1F;
+    border-top:1px solid rgb(255, 136, 57);
     margin: 15px 0px 10px -1px;
 }
 
@@ -91,7 +91,7 @@ hr {
     margin: 3px;
 }
 .menuButton:hover {
-    background-color: #3a64f3;
+    background-color: #124ecc;
 }
 
 .menuButton.confirm {
