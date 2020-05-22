@@ -149,7 +149,7 @@ $("div.jobsearch-SerpJobCard").on({
         $(this).prepend("\
             <div class='impedeMenu'> \
                 <img src='"+iconURL+"' \
-                    alt='Click Here to Add/Remove Indeed Job from Impede Database' \
+                    alt='Click Here to Add/Remove this job from Impede database' \
                     id='impedeButton'> \
                 </img> \
             </div> \

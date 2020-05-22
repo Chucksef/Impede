@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Impede",
     "version": "1.4.0",
-    "description": "A small web app that makes Indeed.com a much friendlier and more useful website.",
+    "description": "A small web app that makes the US's most popular job board a much friendlier and more useful website.",
     "short_name": "Impede",
     "icons": {
         "128": "icons/icon128.png",
