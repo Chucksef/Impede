@@ -64,7 +64,13 @@ $(function(){
             })
 
             chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-                chrome.tabs.sendMessage(tabs[0].id, {"company": "", "position": ""}, function(response){
+
+                // OLD BROKEN REQUEST
+                chrome.tabs.sendMessage(tabs[0].id, {
+                    
+                    "company": "",
+                    "position": ""
+                }, function(response){
                     if(chrome.runtime.lastError){
                         console.log("Whoops.. "+chrome.runtime.lastError.message);
                     }
@@ -81,6 +87,15 @@ $(function(){
                         $("#JobTitle").css("color","black");
                     }
                 });
+
+                // NEW BROKEN REQUEST
+                /*
+                chrome.tabs.sendMessage(tabs[0].id, {
+                    contentScriptQuery: "impedeQuery",
+                    company: "",
+                    position: ""
+                }, )
+                */
             })
         })
 

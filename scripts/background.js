@@ -17,32 +17,47 @@ $("button.ia-AddCoverLetter-button").each(function(){
 $(".ia-ResumeMessage-applyLink").on("click", function(e){
     setTimeout(function(){ $("#ia-FilePicker-resume").click(); }, 50);
 })
-$("body").prepend("<div id='snackbar'>Cover letter copied to clipboard</div>");
+$("body").prepend("<div id='snackbar'>Cover Letter Inserted!</div>");
+
+let iframe = document.querySelector("#vjs-container-iframe");
+if (iframe) {
+    iframe.setAttribute("scrolling", "yes")
+}
 
 //FUNCTIONS GO HERE
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse){
+
+        console.log(`request: ${JSON.stringify(request)}\nsender: ${JSON.stringify(sender)}\nsendResponse: ${JSON.stringify(sendResponse)}`);
         
         if (request.cl){
-            console.log(sender+" is sending a cover letter. Pasting into ");
-            var ta = document.getElementById("textarea-applicant.applicationMessage");
-            ta.value = request.cl;
-            ta.select();
-            document.execCommand("cut");
-            ta.focus();
-            
-            $("#snackbar").addClass("show");
-            setTimeout(function(){
-                $("#snackbar").removeClass("show")
-                document.execCommand("paste");
-            }, 3000);
+            console.log(sender+" is sending a cover letter. Pasting into");
+            let ta = document.querySelector("textarea");
+            if (!ta) {
+                console.log(`can't find the textarea inside of ${document}`);
+            } else {
+                ta.value = request.cl;
+                ta.select();
+                document.execCommand("copy");
+                ta.focus();
+
+                setTimeout(()=>{
+                    document.execCommand("paste");
+                }, 1);
+                
+                $("#snackbar").addClass("show");
+                setTimeout(function(){
+                    $("#snackbar").removeClass("show")
+                }, 3000);
+                return true;
+            }
             
         } else if (request.company != undefined) {
             console.log(sender+" is requesting company name and job title.");
-            var jt = document.getElementById("vjs-jobtitle").innerHTML;
-            var cn = document.getElementById("vjs-cn").innerHTML;
-            console.log("sending response: "+cn+" —— "+jt);
-            sendResponse({"company": cn, "job": jt});
+            var jobTitle = document.querySelector(".ia-JobInfoHeader-title").innerText;
+            var companyName = document.querySelector(".ia-JobInfoHeader-subtitle .ia-JobInfoHeader-multilineSubtitle span").innerText;
+            console.log(`sending response: ${companyName} — ${jobTitle}`);
+            sendResponse({"company": companyName, "job": jobTitle});
         }
         return true;
 })
@@ -83,14 +98,14 @@ function updateBlockList(shouldBeBlocked){                                      
 function addTwirldown(elem){                                                        //////Function to Add Twirldown Elements GOES HERE......
 
     //Local variables
-        var jobTitle = elem.children("div.title").children("a").attr("title");
-        var companyName = elem.find("span.company").children("a").text();
+        var jobTitle = elem[0].querySelector(".title").innerText;
+        var companyName = elem[0].querySelector(".company").innerText;
         if(!companyName){
             companyName = elem.find("span.company").text();
         }
         companyName = companyName.trim();
     
-    elem.children("div:not(.impedeMenu)").wrapAll("<details class='impede'></details>");
+    elem.children("*:not(.impedeMenu)").wrapAll("<details class='impede'></details>");
     elem.children(".impede").prepend("<summary class='impede'><b>" + jobTitle + "</b> — " + companyName + "</summary>");
     elem.children(".impede").css('padding', '0px');
     elem.children("details.impede").css('filter', 'contrast(37%) brightness(145%)');                               //Grays Out the Element

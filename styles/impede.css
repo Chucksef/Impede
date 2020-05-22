@@ -12,12 +12,17 @@ body.janus #resultsCol .row, body.janus #resultsCol .related_searches, body.janu
 }
 
 div.indeed-apply-popup{
-    position:fixed !important;
-    left: 15% !important;
+    position: fixed !important;
+    left: 14.25vw !important;
+    transition-property: none;
 }
 
 div.ita-base-container,#popover-background.popover,.indeed-apply-popup-bg{
     display:none !important;
+}
+
+iFrame.vjs-container-iframe {
+    overflow: auto;
 }
 
 #resultsBody #pageContent #resultsCol .row.unifiedRow {

@@ -1,6 +1,6 @@
 /*Default Styles*/
     body {
-        width:160px;
+        width:220px;
         height:220px;
         display:flex;
         flex-direction: column;
@@ -30,7 +30,7 @@
     }
 
     #selectedCL {
-        min-width:108px;
+        min-width:160px;
     }
 
     .menuButton {
@@ -90,17 +90,17 @@
 
 /*Coverletter menu Styles*/
     #inputs {
-        width: 108px;
+        width: 160px;
         margin: 2px auto 20px;
     }
 
     #selectCL {
-        width: 108px;
+        width: 160px;
         margin: 0 auto;
     }
 
     .inputField {
-        width: 104px;
+        width: 154px;
         margin: 5px 0px 0px;
         color: #bbb;
     }
